@@ -1,2 +1,4 @@
-# ...existing code...
+__pycache__/
+.idea/
+cookies.json
 credentials.txt
