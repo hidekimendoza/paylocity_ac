@@ -1,5 +1,4 @@
 import uuid
-from http.client import responses
 
 import pytest
 import pytest_check as check
