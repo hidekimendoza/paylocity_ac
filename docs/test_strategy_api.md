@@ -25,29 +25,28 @@ Other properties:
 * **net**: float, ro
 
 ## Testing tools
-The API testing will be executed utilizing postman.
+The API testing will be executed utilizing pytest and requests.
 
 ## 2. Features to Be Tested 
 ### 2.1 CRUD Operations
 Create
 * Successful creation of new resources with valid data payloads.
-* Verification of HTTP 201 Created status code and correct response body structure.
+* Verification of HTTP 200 Created status code and correct response body structure.
 * Validation of newly created resource's presence and accuracy in subsequent GET requests.
 
 Read
 * Retrieval of individual resources by ID.
-* Retrieval of lists of resources with various pagination and filtering parameters.
+* Retrieval of lists of resources with various pagination and filtering parameters.?
 * Verification of HTTP 200 OK status code and accurate data in the response body.
 Testing edge cases for reading (e.g., non-existent IDs, empty lists).
 
 Update (PUT/PATCH)
 * Successful modification of existing resources with valid partial and full data payloads.
 * Verification of HTTP 200 OK status code and updated resource data in subsequent GET requests.
-* Testing for concurrent updates and conflict resolution, if applicable.
 
 Delete
 * Successful deletion of existing resources.
-* Verification of HTTP 204 No Content or 200 OK status code.
+* Verification of No Content or 200 OK status code.
 * Confirmation that the deleted resource is no longer retrievable (e.g., subsequent GET returns 404 Not Found).
 * Data Consistency: Ensuring data consistency across related API endpoints (e.g., creating an order updates product stock).
 
