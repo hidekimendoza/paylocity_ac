@@ -37,7 +37,7 @@ class TestDeletion:
 
         login_page.login("TestUser788", "L?}'5miB/n]9")
         login_page.save_cookies()
-        time.sleep(3) # Wait for page to fully load
+        time.sleep(3)  # Wait for page to fully load
         benefits_p = BenefitsPage(driver)
         benefits_p.add_employee("first", "last", "0", verify=True)
         time.sleep(3)
@@ -53,13 +53,13 @@ class TestDeletion:
         updated_employees_ids = benefits_p.get_column_texts(0)[1:]
         assert to_remove_id not in updated_employees_ids
 
-
     def test_cancel_deletion_shall_keep_all_elements(self, logged_in_session):
         driver = logged_in_session
         benefits_p = BenefitsPage(driver)
         employees_ids = benefits_p.get_column_texts(0)[1:]
         to_remove_id = employees_ids[-1]
-        employee_row = benefits_p.get_existing_employee_from_table(to_remove_id)
+        employee_row = benefits_p.get_existing_employee_from_table(
+            to_remove_id)
         benefits_p.click_delete_button(employee_row)
         benefits_p.cancel_deletion()
         time.sleep(5)
@@ -72,6 +72,7 @@ class TestDeletion:
         benefits_p = BenefitsPage(driver)
         employees_ids = benefits_p.get_column_texts(0)[1:]
         to_remove_id = employees_ids[-1]
-        employee_row = benefits_p.get_existing_employee_from_table(to_remove_id)
+        employee_row = benefits_p.get_existing_employee_from_table(
+            to_remove_id)
         benefits_p.click_delete_button(employee_row)
         assert "Delete Employee" == benefits_p.get_delete_title_form()

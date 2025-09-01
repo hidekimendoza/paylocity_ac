@@ -10,7 +10,8 @@ class APIClient:
     """
     API client for Paylocity Benefits, following the Page Object Model (POM) pattern.
     """
-    def __init__(self, base_url=URL, api_key = "VGVzdFVzZXI3ODg6TD99JzVtaUIvbl05"):
+
+    def __init__(self, base_url=URL, api_key="VGVzdFVzZXI3ODg6TD99JzVtaUIvbl05"):
         self.base_url = base_url
         self.session = requests.Session()
         self.api_key = api_key

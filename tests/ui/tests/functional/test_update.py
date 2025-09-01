@@ -37,7 +37,7 @@ class TestUpdate:
 
         login_page.login("TestUser788", "L?}'5miB/n]9")
         login_page.save_cookies()
-        time.sleep(3) # Wait for page to fully load
+        time.sleep(3)  # Wait for page to fully load
         benefits_p = BenefitsPage(driver)
         benefits_p.add_employee("first", "last", "0", verify=True)
         time.sleep(3)
@@ -49,15 +49,16 @@ class TestUpdate:
         benefits_p = BenefitsPage(driver)
         employees_ids = benefits_p.get_column_texts(0)[1:]
         to_update_id = employees_ids[-1]
-        benefits_p.edit_employee(to_update_id, "newfname", "newlname", 1, validate=True)
-
+        benefits_p.edit_employee(
+            to_update_id, "newfname", "newlname", 1, validate=True)
 
     def test_creation_header_content_shall_be_properly_set(self, logged_in_session):
         driver = logged_in_session
         benefits_p = BenefitsPage(driver)
         employees_ids = benefits_p.get_column_texts(0)[1:]
         to_update_id = employees_ids[-1]
-        employee_row = benefits_p.get_existing_employee_from_table(to_update_id)
+        employee_row = benefits_p.get_existing_employee_from_table(
+            to_update_id)
         benefits_p.click_edit_button(employee_row)
 
         assert benefits_p.get_title_form() == "Update Employee"

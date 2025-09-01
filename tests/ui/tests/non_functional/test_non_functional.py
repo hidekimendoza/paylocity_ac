@@ -37,14 +37,14 @@ class TestNonFunctional:
 
         login_page.login("TestUser788", "L?}'5miB/n]9")
         login_page.save_cookies()
-        time.sleep(3) # Wait for page to fully load
+        time.sleep(3)  # Wait for page to fully load
 
         # This fixture yields the driver, keeping the session active for the test
         yield driver
 
-
     def test_page_load_shall_not_throw_errors(self, logged_in_session):
         driver = logged_in_session
         browser_logs = driver.get_log("browser")
-        failure_logs = [log for log in browser_logs if log['level'] == 'SEVERE']
+        failure_logs = [
+            log for log in browser_logs if log['level'] == 'SEVERE']
         assert not failure_logs

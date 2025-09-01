@@ -11,7 +11,8 @@ class Employee:
 
     @classmethod
     def calculate_benefit_cost_per_check(cls, no_dependants):
-        total_annual_benefit_cost = cls.ANNUAL_EMPLOYEE_BENEFIT_COST + (no_dependants * cls.ANNUAL_DEPENDENT_COST)
+        total_annual_benefit_cost = cls.ANNUAL_EMPLOYEE_BENEFIT_COST + \
+            (no_dependants * cls.ANNUAL_DEPENDENT_COST)
 
         # Calculate the benefit cost per paycheck
         benefit_cost_per_check = total_annual_benefit_cost / cls.NUM_PAYCHECKS_PER_YEAR
@@ -20,7 +21,8 @@ class Employee:
 
     @classmethod
     def calculate_net_pay_per_check(cls, no_dependants):
-        total_annual_benefit_cost = cls.ANNUAL_EMPLOYEE_BENEFIT_COST + (no_dependants * cls.ANNUAL_DEPENDENT_COST)
+        total_annual_benefit_cost = cls.ANNUAL_EMPLOYEE_BENEFIT_COST + \
+            (no_dependants * cls.ANNUAL_DEPENDENT_COST)
 
         # Calculate the benefit cost per paycheck
         benefit_cost_per_check = total_annual_benefit_cost / cls.NUM_PAYCHECKS_PER_YEAR
@@ -46,9 +48,9 @@ class Employee:
 
     def required_fields_to_dict(self):
         return {
-        "username": self.username,
-        "firstName": self.firstName,
-        "lastName": self.lastName
+            "username": self.username,
+            "firstName": self.firstName,
+            "lastName": self.lastName
         }
 
     def to_dict(self):

@@ -40,9 +40,12 @@ class LoginPage:
         wait = WebDriverWait(self.driver, 10)
 
         try:
-            username_field = wait.until(ec.presence_of_element_located(self.USERNAME_INPUT))
-            password_field = wait.until(ec.presence_of_element_located(self.PASSWORD_INPUT))
-            submit_button = wait.until(ec.element_to_be_clickable(self.SUBMIT_BUTTON))
+            username_field = wait.until(
+                ec.presence_of_element_located(self.USERNAME_INPUT))
+            password_field = wait.until(
+                ec.presence_of_element_located(self.PASSWORD_INPUT))
+            submit_button = wait.until(
+                ec.element_to_be_clickable(self.SUBMIT_BUTTON))
 
             username_field.send_keys(username)
             password_field.send_keys(password)
